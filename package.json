@@ -1,13 +1,13 @@
 {
-  "name": "inquirer-npm-name",
-  "version": "1.0.0",
-  "description": "Helper function using inquirer to validate a value provided in a prompt does not exist as an npm package.",
+  "name": "inquirer-pypi-name",
+  "version": "0.1.0",
+  "description": "Helper function using inquirer to validate a value provided in a prompt does not exist as an pypi package.",
   "homepage": "",
-  "repository": "SBoudrias/inquirer-npm-name",
+  "repository": "cage1016/inquirer-pypi-name",
   "author": {
-    "name": "Simon Boudrias",
-    "email": "admin@simonboudrias.com",
-    "url": "http://simonboudrias.com"
+    "name": "Kai-Chu Chung",
+    "email": "cage.chung@gmail.com",
+    "url": "http://kaichu.io/"
   },
   "files": [
     "lib"
@@ -17,6 +17,8 @@
     "inquirer",
     "npm",
     "name",
+    "python",
+    "pypi",
     "yeoman",
     "package"
   ],
@@ -30,14 +32,15 @@
     "gulp-nsp": "^0.4.5",
     "gulp-plumber": "^1.0.0",
     "proxyquire": "^1.6.0",
-    "sinon": "^1.15.4"
+    "sinon": "^1.15.4",
+    "sinon-stub-promise": "^1.1.0"
   },
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT",
   "dependencies": {
-    "npm-name": "^1.1.1"
+    "chalk": "^1.1.3",
+    "pypi-name": "^0.1.0"
   }
 }

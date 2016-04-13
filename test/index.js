@@ -5,7 +5,7 @@ var sinon = require('sinon');
 var proxyquire = require('proxyquire');
 var askName = require('../lib');
 
-describe('inquirer-npm-name', function () {
+describe('inquirer-pypi-name', function () {
   beforeEach(function () {
     this.conf = {
       name: 'name',
@@ -37,10 +37,10 @@ describe('inquirer-npm-name', function () {
     });
   });
 
-  describe('npm validation logic (inquirer `when` function)', function () {
+  describe('pypi validation logic (inquirer `when` function)', function () {
     beforeEach(function () {
       var askName2 = proxyquire('../lib', {
-        'npm-name': function (name, cb) {
+        'pypi-name': function (name, cb) {
           cb.apply(null, this.npmNameMock);
         }.bind(this)
       });
@@ -49,7 +49,7 @@ describe('inquirer-npm-name', function () {
       this.when = this.inquirer.prompt.getCall(0).args[0][1].when;
     });
 
-    it('ask question if npm name is taken', function (done) {
+    it('ask question if pypi name is taken', function (done) {
       this.npmNameMock = [null, false];
       this.when.call({
         async: function () {
@@ -61,7 +61,7 @@ describe('inquirer-npm-name', function () {
       }, {name: 'foo'});
     });
 
-    it('does not ask question if npm name is free', function (done) {
+    it('does not ask question if pypi name is free', function (done) {
       this.npmNameMock = [null, true];
       this.when.call({
         async: function () {
@@ -73,7 +73,7 @@ describe('inquirer-npm-name', function () {
       }, {name: 'foo'});
     });
 
-    it('does not ask if npm-name fails', function (done) {
+    it('does not ask if pypi-name fails', function (done) {
       this.npmNameMock = [new Error('network failure')];
       this.when.call({
         async: function () {
